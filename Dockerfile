@@ -4,4 +4,7 @@ RUN apt-get update && apt install git
 
 WORKDIR /root/homework12
 
-RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git && cd ./App42PaaS-Java-MySQL-Sample && mvn -B package
+COPY App42PaaS-Java-MySQL-Sample/ ./App42PaaS-Java-MySQL-Sample/
+
+WORKDIR /root/homework12/App42PaaS-Java-MySQL-Sample
+RUN mvn -B package
