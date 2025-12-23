@@ -5,6 +5,7 @@ services:
             - '8080:8080'
         volumes:
             - app:/usr/local/tomcat/webapps
+            - ./App42PaaS-Java-MySQL-Sample/WebContent/:/usr/local/tomcat/ROOT/
         depends_on:
             - builder
             - db
