@@ -7,6 +7,7 @@ services:
             - app:/usr/local/tomcat/webapps
         depends_on:
             - builder
+            - db
     builder:
         build:
             context: .
@@ -18,12 +19,14 @@ services:
         restart: always
         ports:
             - '3306:3306'
+        volumes:
+            - data:/var/lib/mysql
         environment:
-            MYSQL_ROOT_PASSWORD: your_root_password
-            MYSQL_DATABASE: my_database
-            MYSQL_USER: acp4pogynvaeidfj
-            MYSQL_PASSWORD: my_user_password
-
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: homework12
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password123
 
 volumes:
     app:
+    data:
