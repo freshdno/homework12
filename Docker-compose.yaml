@@ -1,0 +1,17 @@
+services:
+    tomcat:
+        image: tomcat:9.0.111-jre21-temurin-jammy
+        ports:
+            - '8080:8080'
+        volumes:
+            - app:/usr/local/tomcat/webapps
+        depends_on:
+            - maven
+    maven:
+        build:
+            context: .
+        volumes:
+           - app:/root/homework12/App42PaaS-Java-MySQL-Sample/target
+
+volumes:
+    app:
