@@ -16,7 +16,7 @@ services:
            - app:/root/homework12/App42PaaS-Java-MySQL-Sample/target
 
     db:
-        image: mysql:latest
+        image: mysql:5.7
         restart: always
         ports:
             - '3306:3306'
